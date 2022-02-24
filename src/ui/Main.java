@@ -1,5 +1,6 @@
 package ui;
 import app.Client;
+import java.io.IOException;
 import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
@@ -11,6 +12,11 @@ public class Main {
 				break;
 			else
 				client.executeAction(action);
+		}
+		try {
+			client.close();
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 		sc.close();
 	}

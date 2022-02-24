@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.net.Inet4Address;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 import com.Receiver.OnMessageListener;
@@ -49,11 +50,9 @@ public class Server implements OnMessageListener{
 				}
 			}
 		}else if (m.equalsIgnoreCase("whatTimeIsIt")) {
-			
-		}else if (m.equalsIgnoreCase("RTT")) {
-			
-		}else if (m.equalsIgnoreCase("speed")) {
-			
+			connection.sendMessage(Calendar.getInstance().getTime().toString());
 		}
+		else
+			connection.sendMessage(m);
 	}
 }

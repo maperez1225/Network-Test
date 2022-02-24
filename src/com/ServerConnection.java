@@ -38,8 +38,8 @@ public class ServerConnection extends Thread {
 		listener = l;
 	}
 	public void sendMessage(String string) throws IOException {
-		BufferedWriter br = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
-		br.write(string+"\n");
-		br.flush();
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+		bw.write(string+"\n");
+		bw.flush();
 	}
 }

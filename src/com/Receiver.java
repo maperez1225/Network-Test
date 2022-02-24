@@ -3,6 +3,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.net.SocketException;
 public class Receiver extends Thread {
 	private InputStream is;
 	public OnMessageListener listener;
@@ -19,6 +20,8 @@ public class Receiver extends Thread {
 					break;
 				listener.onMessage(msg);
 			}
+		} catch (SocketException e) {
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
