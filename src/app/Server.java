@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 import com.Receiver.OnMessageListener;
 import com.ServerConnection;
-public class Server implements OnMessageListener{
+public class Server implements OnMessageListener {
 	private ServerConnection connection;
 	public Server() {
 		connection = ServerConnection.getInstance();
